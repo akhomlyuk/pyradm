@@ -1,5 +1,6 @@
 ## 🔮 pyradm
 Remote administration tool from telegram\
+Coded with ❤️ **python3** + **aiogram3**\
 https://t.me/pt_soft
 
 ## 💻 v0.1
@@ -7,6 +8,7 @@ https://t.me/pt_soft
 - [X] Crossplatform
 - [X] Upload/Download
 - [X] Fully compatible shell
+- [X] Process list
 - [ ] Webcam ?
 
 ## ⚙️ Functional
@@ -19,6 +21,8 @@ https://t.me/pt_soft
 /download - download <abs. path>
 /info - system info
 /ip - public ip address
+/ps - process list
+Send any file as file for upload to target
 ```
 
 ## 📘 Install

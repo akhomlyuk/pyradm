@@ -8,6 +8,7 @@ import screenshot
 import ip_addr
 import up_down
 import shell
+import ps
 from cfg import bot as bot
 from icecream import ic
 
@@ -23,6 +24,7 @@ dp.include_router(screenshot.router)
 dp.include_router(ip_addr.router)
 dp.include_router(up_down.router)
 dp.include_router(shell.router)
+dp.include_router(ps.router)
 
 
 @dp.errors()

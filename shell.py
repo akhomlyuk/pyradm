@@ -29,12 +29,18 @@ async def shell_state(message: Message, state: FSMContext):
 async def cmd_shell(message: Message, state: FSMContext):
     try:
         await state.update_data(shell_cmd=message.text.strip())
+
         command = message.text.strip()
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
+
         if stdout:
             output = stdout.decode('utf-8', errors='ignore')
-            await message.answer(f"{output}")
+            part_size = 3900
+            message_parts = [output[i:i + part_size] for i in range(0, len(output), part_size)]
+            for part in message_parts:
+                await message.answer(f"{part}")
+
         if command.lower() == 'exit':
             await state.clear()
             await message.answer(f"Exiting from shell...\n<b>Shell mode OFF</b>")
