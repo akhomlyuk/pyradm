@@ -3,10 +3,11 @@ Remote administration tool from telegram\
 https://t.me/pt_soft
 
 ## 💻 v0.1
-- [X] Screenshot
+- [X] Screenshot from target
 - [X] Crossplatform
 - [X] Upload/Download
 - [X] Fully compatible shell
+- [ ] Webcam ?
 
 ## ⚙️ Functional
 
