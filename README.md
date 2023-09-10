@@ -36,3 +36,4 @@ Send any file as file for upload to target
 ![pyadm.png](static/pyadm.png)
 ![mobile.png](static/mobile.png)
 ![shell.png](static/shell.png)
+[![HitCount](https://hits.dwyl.com/akhomlyuk/pyradm.svg?style=flat-square)](http://hits.dwyl.com/akhomlyuk/pyradm)
