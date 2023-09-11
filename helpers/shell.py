@@ -4,7 +4,6 @@ from aiogram.types import Message
 from aiogram.filters.command import Command
 from aiogram.fsm.context import FSMContext
 import logging
-from icecream import ic
 import subprocess
 
 router: Router = Router()
@@ -20,8 +19,6 @@ async def shell_state(message: Message, state: FSMContext):
         await state.set_state(Shell.ShellOn)
         await message.answer('<b>Shell mode ON</b>\nSend <code>exit</code> for exit')
     except Exception as e:
-        ic()
-        ic(e)
         logging.error(e)
 
 
@@ -48,6 +45,4 @@ async def cmd_shell(message: Message, state: FSMContext):
         else:
             await state.set_state(Shell.ShellOn)
     except Exception as e:
-        ic()
-        ic(e)
         await message.answer(str(e))

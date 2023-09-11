@@ -1,15 +1,16 @@
 ## 🔮 pyradm
-Remote administration tool from telegram\
+Remote administration crossplatfrom tool via telegram\
 Coded with ❤️ **python3** + **aiogram3**\
 https://t.me/pt_soft
-
-## 💻 v0.1
+---
+## 💻 v0.2
 - [X] Screenshot from target
 - [X] Crossplatform
 - [X] Upload/Download
 - [X] Fully compatible shell
 - [X] Process list
-- [ ] Webcam ?
+- [X] Webcam (video record or screenshot)
+- [X] Geolocation
 
 ## ⚙️ Functional
 
@@ -18,10 +19,12 @@ https://t.me/pt_soft
 /help - help
 /shell - shell commands
 /sc - screenshot
-/download - download <abs. path>
+/download - download (abs. path)
 /info - system info
-/ip - public ip address
+/ip - public ip address and geolocation
 /ps - process list
+/webcam 5 - record video (secs)
+/webcam - screenshot from camera
 Send any file as file for upload to target
 ```
 
@@ -29,11 +32,19 @@ Send any file as file for upload to target
 * `git clone https://github.com/akhomlyuk/pyradm.git`
 * `cd pyradm`
 * `pip3 install -r requirements.txt`
-* Put bot token to cfg.py, ask @Bothfather
-* python3 main.py
+* `Put bot token to cfg.py, ask @Bothfather`
+* `python3 main.py`
+
+## 🚥 Compile
+* `Put bot token to cfg.py`
+* `pip install nuitka`
+* `nuitka --mingw64 --onefile --follow-imports --remove-output -o pyradm.exe main.py`
 
 ## 📷 Screens
 ![pyadm.png](static/pyadm.png)
 ![mobile.png](static/mobile.png)
 ![shell.png](static/shell.png)
+![webcam.png](static/webcam.png)
+![map.png](static/map.png)
+
 [![HitCount](https://hits.dwyl.com/akhomlyuk/pyradm.svg?style=flat-square)](http://hits.dwyl.com/akhomlyuk/pyradm)

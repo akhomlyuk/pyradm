@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.types import Message
 from aiogram.filters.command import Command
-from icecream import ic
+import logging
 from datetime import datetime
 import psutil
 import platform
@@ -29,5 +29,4 @@ async def cmd_sysinfo(message: Message):
 <b>Available:</b> <code>{svmem.available // 1024 // 1024} Mb</code>
 <b>Boot Time:</b> <code>{bt.year}/{bt.month}/{bt.day} {bt.hour}:{bt.minute}:{bt.second}</code>''')
     except Exception as e:
-        ic()
-        ic(e)
+        logging.error(e)

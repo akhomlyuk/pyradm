@@ -1,8 +1,7 @@
 from aiogram import Router
 from aiogram.types import Message
 from aiogram.filters.command import Command
-from icecream import ic
-from cfg import bot
+import logging
 import psutil
 
 router: Router = Router()
@@ -21,5 +20,4 @@ async def cmd_process_list(message: Message):
         for part in message_parts:
             await message.answer(f'<b>Process name</b> : <b>PID</b>\n{part}')
     except Exception as e:
-        ic()
-        ic(e)
+        logging.error(e)

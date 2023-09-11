@@ -1,19 +1,14 @@
 import asyncio
 import logging
 import os
-from aiogram import Dispatcher, types, Bot
-import handlers
-import sys_info
-import screenshot
-import ip_addr
-import up_down
-import shell
-import ps
+from aiogram import Dispatcher, types
+from helpers import ip_addr, ps, screenshot, shell, sys_info, up_down, webcam, handlers
 from cfg import bot as bot
-from icecream import ic
+
+# Author : Exited3n
+# https://t.me/pt_soft
 
 os.makedirs('logs', exist_ok=True)
-
 
 dp = Dispatcher()
 
@@ -25,6 +20,7 @@ dp.include_router(ip_addr.router)
 dp.include_router(up_down.router)
 dp.include_router(shell.router)
 dp.include_router(ps.router)
+dp.include_router(webcam.router)
 
 
 @dp.errors()
@@ -35,9 +31,8 @@ async def errors_handler(update: types.Update, exception: Exception):
 async def main():
     try:
         await dp.start_polling(bot)
-    except (KeyboardInterrupt, SystemExit) as e:
+    except (KeyboardInterrupt, SystemExit):
         logging.info("Bot stopped")
-        ic(e)
     finally:
         await bot.session.close()
 

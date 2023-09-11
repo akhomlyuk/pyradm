@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.types import Message, FSInputFile
 from aiogram.filters.command import Command
-from icecream import ic
+import logging
 import os
 from PIL import ImageGrab
 from sys import platform
@@ -23,5 +23,4 @@ async def cmd_sc(message: Message):
         await message.answer_document(screen)
         os.remove(path)
     except Exception as e:
-        ic()
-        ic(e)
+        logging.error(e)

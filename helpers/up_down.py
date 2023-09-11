@@ -1,8 +1,8 @@
 from aiogram import Router, F
 from aiogram.types import Message, FSInputFile
 from aiogram.filters.command import Command
-from icecream import ic
 from cfg import bot
+import logging
 
 router: Router = Router()
 
@@ -16,8 +16,7 @@ async def cmd_download(message: Message):
         file = FSInputFile(file_path)
         await bot.send_document(message.chat.id, file)
     except Exception as e:
-        ic()
-        ic(e)
+        logging.error(e)
 
 
 @router.message(F.document)
@@ -27,5 +26,4 @@ async def cmd_upload(message: Message):
         file_path = file.file_path
         await bot.download_file(file_path, message.document.file_name)
     except Exception as e:
-        ic()
-        ic(e)
+        logging.error(e)
