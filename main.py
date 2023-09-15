@@ -2,7 +2,7 @@ import asyncio
 import logging
 import os
 from aiogram import Dispatcher, types
-from helpers import ip_addr, ps, screenshot, shell, sys_info, up_down, webcam, handlers
+from helpers import ip_addr, ps, screenshot, shell, sys_info, up_down, webcam, handlers, file_man, mic
 from cfg import bot as bot
 
 # Author : Exited3n
@@ -21,11 +21,13 @@ dp.include_router(up_down.router)
 dp.include_router(shell.router)
 dp.include_router(ps.router)
 dp.include_router(webcam.router)
+dp.include_router(file_man.router)
+dp.include_router(mic.router)
 
 
 @dp.errors()
 async def errors_handler(update: types.Update, exception: Exception):
-    logging.error(f'Error: {update}: {exception}')
+    logging.error(f'❌ Error: {update}: {exception}')
 
 
 async def main():
@@ -41,4 +43,8 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, filename='logs/bot.log',
                         format="%(filename)s:%(lineno)d #%(levelname)-8s" "[%(asctime)s] - %(name)s - %(message)s")
     logging.info('Bot starting...')
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        print('⛔️ Bot stopped by Ctrl + C')
+        logging.info('⛔️ Bot stopped by Ctrl + C')
