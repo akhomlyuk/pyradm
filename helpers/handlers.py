@@ -19,6 +19,7 @@ commands = '''
 /fm - filemanager
 /fm /home or /fm C:\
 /mic 10 - record audio from mic
+/clip - get clipboard data
 Press button to download file
 Send any file as file for upload to target'''
 

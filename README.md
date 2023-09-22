@@ -13,6 +13,7 @@
 - [X] Geolocation
 - [X] Filemanager
 - [X] Microphone
+- [X] Clipboard (text, image)
 
 ## ⚙️ Functional
 
@@ -30,6 +31,7 @@
 /fm - filemanager
 /fm /home or /fm C:\
 /mic 10 - record audio from mic
+/clip - get clipboard data
 Press button to download file
 Send any file as file for upload to target
 ```
