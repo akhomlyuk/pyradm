@@ -1,9 +1,10 @@
 ## 🔮 pyradm
 > Remote administration crossplatfrom tool via telegram\
 > Coded with ❤️ **python3** + **aiogram3**\
-> https://t.me/pt_soft
+> https://t.me/pt_soft \
+> https://t.me/pt_feedback_bot
 
-## 💻 v0.3
+### 💻 v0.4 - Added Windows credentials recovery
 - [X] Screenshot from target
 - [X] Crossplatform
 - [X] Upload/Download
@@ -14,6 +15,10 @@
 - [X] Filemanager
 - [X] Microphone
 - [X] Clipboard (text, image)
+- [X] Windows credentials recovery (browsers, dbs, chats, mail, etc) 
+
+🔗 Many thanks to the [LaZagne](https://github.com/AlessandroZ/LaZagne/tree/master) project \
+🔗 All supported [software](https://github.com/AlessandroZ/LaZagne/tree/master#supported-software)
 
 ## ⚙️ Functional
 
@@ -32,6 +37,8 @@
 /fm /home or /fm C:\
 /mic 10 - record audio from mic
 /clip - get clipboard data
+/winpass - credentials recovery
+
 Press button to download file
 Send any file as file for upload to target
 ```
@@ -55,5 +62,6 @@ Send any file as file for upload to target
 ![webcam.png](static/webcam.png)
 ![map.png](static/map.png)
 ![fileman.png](static/fileman.png)
-
+![pyradm_passes.png](static/pyradm_passes.png)
+![pyradm_passes2.png](static/pyradm_passes2.png)
 [![HitCount](https://hits.dwyl.com/akhomlyuk/pyradm.svg?style=flat-square)](http://hits.dwyl.com/akhomlyuk/pyradm)
