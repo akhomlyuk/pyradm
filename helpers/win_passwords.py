@@ -7,7 +7,7 @@ import os
 
 router: Router = Router()
 
-home_dir = path = os.path.expanduser('~')
+home_dir = os.path.expanduser('~')
 
 
 def get_filename():

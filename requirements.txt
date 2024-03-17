@@ -1,7 +1,7 @@
-aiogram~=3.3.0
+aiogram~=3.4.1
 requests~=2.31.0
-psutil~=5.9.5
-Pillow~=10.0.0
+psutil~=5.9.7
+Pillow~=10.0.1
 opencv-python~=4.9.0.80
-PyAudio~=0.2.13
+PyAudio~=0.2.14
 pyperclip~=1.8.2
