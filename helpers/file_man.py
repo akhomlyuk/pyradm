@@ -12,18 +12,17 @@ router: Router = Router()
 
 def file_man(folder=None):
     markup = InlineKeyboardBuilder()
-    markup.button(text="⬆️", callback_data=folder + "*dir*")
+    markup.button(text="⬆️", callback_data=f"{folder}*dir*")
     for file in os.listdir(folder):
         if os.path.isfile(os.path.join(folder, file)):
             if len(os.path.join(folder, file)) >= 50:
-                markup.button(text="📃 " + file, callback_data=os.path.join(folder, file)[:44])
+                markup.button(text=f"📃 {file}", callback_data=os.path.join(folder, file)[:44])
             else:
-                markup.button(text="📃 " + file, callback_data=os.path.join(folder, file))
+                markup.button(text=f"📃 {file}", callback_data=os.path.join(folder, file))
+        elif len(os.path.join(folder, file)) >= 50:
+            markup.button(text=f"📁 {file}", callback_data=os.path.join(folder, file)[:44])
         else:
-            if len(os.path.join(folder, file)) >= 50:
-                markup.button(text="📁 " + file, callback_data=os.path.join(folder, file)[:44])
-            else:
-                markup.button(text="📁 " + file, callback_data=os.path.join(folder, file))
+            markup.button(text=f"📁 {file}", callback_data=os.path.join(folder, file))
     markup.adjust(1, 2)
     return markup
 
@@ -49,17 +48,15 @@ async def file_action(callback: CallbackQuery):
         if os.path.isfile(file_name):
             file = FSInputFile(file_name)
             await callback.message.answer_document(file)
-            await callback.answer()
         elif file_name.endswith("*dir*"):
             parent_dir = os.path.join(Path(file_name).parent)
             keyboard = file_man(parent_dir)
             await callback.message.answer(f'📚 Files:\n{parent_dir}', reply_markup=keyboard.as_markup())
-            await callback.answer()
         else:
             folder = os.path.join(Path(file_name))
             keyboard = file_man(folder)
             await callback.message.answer(f'📚 Files:\n{folder}', reply_markup=keyboard.as_markup())
-            await callback.answer()
+        await callback.answer()
     except WindowsError:
         await callback.message.answer(f'Problem with long name\nTry to download from /shell or /download command')
     except Exception as e:

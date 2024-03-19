@@ -29,7 +29,7 @@ async def cmd_start(message: Message):
     try:
         await message.answer(f'Hello @{message.from_user.username}')
         await message.answer(f'{commands}')
-        await message.answer(f'Author: @pt_soft')
+        await message.answer('Author: @pt_soft')
     except Exception as e:
         logging.error(e)
 
@@ -37,4 +37,4 @@ async def cmd_start(message: Message):
 @router.message(Command("help"))
 async def cmd_help(message: Message):
     await message.answer(f'{commands}')
-    await message.answer(f'Author: @pt_soft')
+    await message.answer('Author: @pt_soft')

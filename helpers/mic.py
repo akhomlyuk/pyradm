@@ -30,7 +30,7 @@ async def cmd_mic(message: Message):
             stream = audio.open(format=audio_format, channels=channels, rate=rate, input=True, frames_per_buffer=chunk)
             frames = []
 
-            for i in range(0, int(rate / chunk * record_seconds)):
+            for _ in range(0, int(rate / chunk * record_seconds)):
                 data = stream.read(chunk)
                 frames.append(data)
 

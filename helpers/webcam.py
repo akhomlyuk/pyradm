@@ -20,7 +20,7 @@ async def cmd_webcam(message: Message):
         args = message.text.split(' ')
 
         if len(args) == 1:
-            path = path + 'cam.jpg'
+            path = f'{path}cam.jpg'
             cap = cv2.VideoCapture(0)
             if cap.isOpened():
                 ret, frame = cap.read()
@@ -37,7 +37,7 @@ async def cmd_webcam(message: Message):
             if cap.isOpened():
                 codec = cv2.VideoWriter_fourcc(*'XVID')
                 out = cv2.VideoWriter(path, codec, 30.0, (640, 480))
-                for i in range(int(args[1]) * 30):
+                for _ in range(int(args[1]) * 30):
                     ret, frame = cap.read()
                     if ret:
                         out.write(frame)
@@ -48,7 +48,7 @@ async def cmd_webcam(message: Message):
                 out.release()
                 os.remove(path)
             else:
-                await message.answer(f'No camera detected')
+                await message.answer('No camera detected')
         else:
             await message.answer(f'/webcam or /webcam 10\nTime in seconds')
         cv2.destroyAllWindows()

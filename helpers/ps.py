@@ -7,9 +7,10 @@ import psutil
 router: Router = Router()
 
 
-procs = ''
-for process in psutil.process_iter():
-    procs += f"{process.name()} : {str(process.pid)}\n"
+procs = ''.join(
+    f"{process.name()} : {str(process.pid)}\n"
+    for process in psutil.process_iter()
+)
 
 
 @router.message(Command("ps"))
