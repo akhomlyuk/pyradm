@@ -1,8 +1,7 @@
 # 🔮 pyradm
 > Remote administration crossplatfrom tool via telegram\
 > Coded with ❤️ **python3** + **aiogram3**\
-> https://t.me/pt_soft \
-> https://t.me/pt_feedback_bot \
+> https://t.me/wh_lab \
 > [Screenshots](#-screens)
 
 ### Disclaimer
