@@ -6,7 +6,7 @@ from helpers import ip_addr, ps, screenshot, shell, sys_info, up_down, webcam, h
 from cfg import bot as bot
 
 # Author : Exited3n
-# https://t.me/pt_soft
+# https://t.me/wh_lab
 
 os.makedirs('logs', exist_ok=True)
 
